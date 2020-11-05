@@ -184,18 +184,11 @@ app.get('/admin/best-profession', async (req, res) => {
             ], 
             where: {
                 paid: true,
-
+                // paymentDate: {
+                //     $between: [start, end]
+                // }
             }
         }
-        // where: {
-        //     [Op.or]: [
-        //         {ClientId: req.profile.id},
-        //         {ContractorId: req.profile.id},
-        //     ],
-        //     status: {
-        //         [Op.ne]: 'terminated'
-        //     }
-        // }
     })
     .then((res) => {
         return res.map((data) => {
